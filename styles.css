@@ -1,80 +1,92 @@
 :root {
   --primary-color: #0A7B42;
-  --text-light: #ffffff;
-  --text-dark: #333333;
-  --border-color: #e5e5e5;
+  --secondary-color: #f8f9fa;
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --spacing: 16px;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
   background: var(--primary-color);
+  color: var(--text-primary);
 }
 
-.app-container {
-  max-width: 500px;
+.container {
+  max-width: 600px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: var(--spacing);
+}
+
+.header {
+  color: white;
+  padding: calc(var(--spacing) * 1.5) var(--spacing);
 }
 
 .current-prayer {
-  color: var(--text-light);
-  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing);
 }
 
 .jamat-time {
   display: flex;
   justify-content: space-between;
-  margin-top: 0.5rem;
+  font-size: 1.1rem;
 }
 
 .prayer-card {
   background: white;
   border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 4rem;
+  padding: calc(var(--spacing) * 1.5);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .prayer-card h2 {
   color: var(--primary-color);
   text-align: center;
-  margin-top: 0;
+  font-size: 1.3rem;
+  margin: 0 0 calc(var(--spacing) * 1.5);
 }
 
 .prayer-day {
-  margin-bottom: 1.5rem;
+  margin-bottom: calc(var(--spacing) * 2);
 }
 
 .prayer-day h3 {
-  font-weight: 500;
-  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing);
 }
 
-.prayer-row {
+.prayer-time {
   display: flex;
   justify-content: space-between;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--border-color);
+  padding: calc(var(--spacing) * 0.75) 0;
+  border-bottom: 1px solid #eee;
 }
 
-.prayer-row span:first-child {
-  color: #666;
+.prayer-time span:first-child {
+  color: var(--text-secondary);
 }
 
-.search-container {
-  margin-top: 1rem;
+.search-box {
+  margin-top: calc(var(--spacing) * 1.5);
+  position: relative;
 }
 
-.search-container input {
+.search-box input {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid var(--border-color);
+  padding: 12px;
+  border: 1px solid #dfe6e9;
   border-radius: 8px;
-  background: #f5f5f5;
+  font-size: 1rem;
+  background: var(--secondary-color);
   box-sizing: border-box;
 }
 
-.bottom-nav {
+.nav-tabs {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -82,27 +94,26 @@ body {
   background: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--border-color);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.nav-btn {
+.tab {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.75rem;
+  padding: calc(var(--spacing) * 0.75);
   border: none;
   background: none;
-  color: #666;
-  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  gap: 4px;
 }
 
-.nav-btn.active {
+.tab.active {
   color: var(--primary-color);
 }
 
-.nav-icon {
+.tab-icon {
   width: 24px;
   height: 24px;
-  margin-bottom: 4px;
-  fill: currentColor;
 }
