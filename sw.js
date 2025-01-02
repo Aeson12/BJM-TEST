@@ -5,9 +5,10 @@ const urlsToCache = [
   "./script.js",
   "./manifest.json",
   "./icons/icon-192x192.png",
-  "./icons/icon-512x512.png"
+  "./icons/icon-512x512.png",
 ];
 
+// Install Service Worker and Cache Files
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -19,6 +20,7 @@ self.addEventListener("install", (event) => {
   );
 });
 
+// Handle Fetch Requests
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
@@ -26,15 +28,13 @@ self.addEventListener("fetch", (event) => {
         response ||
         fetch(event.request).catch(() => {
           console.error("Failed to fetch:", event.request.url);
-   
-
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+        })
+      );
     })
   );
 });
 
+// Handle Push Notifications
 self.addEventListener("push", (event) => {
   const data = event.data.json();
   self.registration.showNotification(data.title, {
@@ -42,4 +42,3 @@ self.addEventListener("push", (event) => {
     icon: data.icon || "./icons/icon-192x192.png",
   });
 });
-
