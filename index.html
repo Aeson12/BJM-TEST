@@ -3,53 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My PWA Website</title>
-  <meta name="description" content="A modern PWA website built with HTML." />
+  <title>Prayer Times App</title>
   <meta name="theme-color" content="#0A7B42" />
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>My PWA Website</h1>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <div class="app-container">
+    <div class="current-prayer">
+      <span>Current Prayer</span>
+      <span>Asr</span>
+      <div class="jamat-time">
+        <span>Jamat</span>
+        <span>3:00 PM</span>
+      </div>
+    </div>
+
+    <div class="prayer-card">
+      <h2>PRAYER TIMES TODAY</h2>
+      
+      <div class="prayer-day">
+        <h3>Thursday, January 2, 2025</h3>
+        <div class="prayer-times">
+          <div class="prayer-row">
+            <span>Fajr Start</span>
+            <span>6:36 AM</span>
+          </div>
+          <div class="prayer-row">
+            <span>Zuhr Start</span>
+            <span>12:14 PM</span>
+          </div>
+          <div class="prayer-row">
+            <span>Asar Start</span>
+            <span>2:27 PM</span>
+          </div>
+          <div class="prayer-row">
+            <span>Maghrib</span>
+            <span>4:14 PM</span>
+          </div>
+          <div class="prayer-row">
+            <span>Esha Start</span>
+            <span>5:35 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prayer-day">
+        <h3>Friday, January 3, 2025</h3>
+        <div class="prayer-times">
+          <div class="prayer-row">
+            <span>Fajr Start</span>
+            <span>6:36 AM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="search-container">
+        <input type="text" placeholder="Search" />
+      </div>
+    </div>
+
+    <nav class="bottom-nav">
+      <button class="nav-btn active">
+        <svg viewBox="0 0 24 24" class="nav-icon"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path></svg>
+        Prayers
+      </button>
+      <button class="nav-btn">
+        <svg viewBox="0 0 24 24" class="nav-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg>
+        Info
+      </button>
     </nav>
-  </header>
-
-  <main>
-    <section id="home">
-      <h2>Welcome to My PWA</h2>
-      <p>This is a simple website that works offline as a PWA.</p>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>This website is a Progressive Web App, meaning you can install it on your device and access it offline.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-
-        <button type="submit">Send</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 My PWA Website</p>
-  </footer>
-
-  <script src="script.js"></script>
+  </div>
 </body>
 </html>
