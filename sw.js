@@ -1,21 +1,23 @@
 const CACHE_NAME = "pwa-cache-v1";
 const urlsToCache = [
-  "./index.html",
-  "./styles.css",
-  "./script.js",
-  "./manifest.json",
-  "./icons/icon-192x192.png",
-  "./icons/icon-512x512.png",
+  "/BJM-TEST/index.html",       // Adjust for GitHub Pages
+  "/BJM-TEST/styles.css",
+  "/BJM-TEST/script.js",
+  "/BJM-TEST/manifest.json",
 ];
+
 
 // Install Service Worker and Cache Files
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache).catch((error) => {
-        console.error("Failed to cache files:", error);
-        throw error;
-      });
+      return Promise.all(
+        urlsToCache.map((url) => {
+          return cache.add(url).catch((error) => {
+            console.error(`Failed to cache ${url}:`, error);
+          });
+        })
+      );
     })
   );
 });
