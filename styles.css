@@ -1,224 +1,40 @@
-:root {
-  --primary-color: #0A7B42;
-  --text-light: #ffffff;
-  --text-gray: #666666;
-  --border-light: #eeeeee;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
-  background: var(--primary-color);
-  color: var(--text-light);
-}
-
 .container {
-  max-width: 100%;
-  padding: 20px;
-}
-
-/* Status Bar */
-.status-bar {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 20px;
-  font-size: 14px;
-}
-
-.menu-icon {
-  font-size: 24px;
-  margin: 10px 0;
-}
-
-/* Current Prayer Section */
-.current-prayer-section {
-  margin: 30px 0;
-}
-
-.prayer-label {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.prayer-name {
-  font-size: 24px;
-  text-align: right;
-  margin-top: -30px;
-}
-
-.jamat-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  margin-top: 10px;
-  font-size: 18px;
-}
-
-/* Prayer Times Section */
-.prayer-times-title {
-  color: var(--primary-color);
-  text-align: center;
-  font-size: 20px;
-  margin: 30px 0;
-}
-
-.prayer-card {
-  background: white;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px 0;
-  color: black;
-}
-
-.date-heading {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.prayer-time-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 0;
-  border-bottom: 1px solid var(--border-light);
-  font-size: 18px;
-}
-
-.prayer-time-row span:first-child {
-  color: var(--text-gray);
-}
-
-/* Search Container */
-.search-container {
-  display: flex;
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.search-container input {
-  flex: 1;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  background: #f5f5f5;
-  font-size: 16px;
-}
-
-.filter-btn {
-  background: #f5f5f5;
-  border: none;
-  border-radius: 10px;
-  padding: 0 15px;
-  font-size: 20px;
-}
-
-/* Bottom Navigation */
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background: white;
-  padding: 10px 0;
-  border-top: 1px solid var(--border-light);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 1rem 0;
 }
-
-.nav-item {
+.card {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  align-items: center;
-  color: var(--text-gray);
-  font-size: 12px;
-  gap: 5px;
+  width: 15rem auto;
+  height: 15rem;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+  margin: auto;
+  overflow: hidden;
 }
-
-.nav-item.active {
-  color: var(--primary-color);
-}
-
-.nav-icon {
-  font-size: 20px;
-}
-
-.next-day {
-  color: white;
-}
-  padding: var(--spacing);
-}
-
-.header {
-  color: white;
-  padding: calc(var(--spacing) * 1.5) var(--spacing);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.current-prayer {
-  font-size: 1.2rem;
-}
-
-.jamat-time {
-  font-size: 1.1rem;
-}
-
-.prayer-card {
-  background: white;
-  border-radius: 12px;
-  padding: calc(var(--spacing) * 1.5);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.prayer-card h2 {
-  color: var(--primary-color);
-  text-align: center;
-  font-size: 1.3rem;
-}
-
-.prayer-time {
-  display: flex;
-  justify-content: space-between;
-  padding: calc(var(--spacing) * 0.75) 0;
-  border-bottom: 1px solid #eee;
-}
-
-.search-box {
-  margin-top: calc(var(--spacing) * 1.5);
-}
-
-.search-box input {
+.card--avatar {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #dfe6e9;
-  border-radius: 8px;
-  font-size: 1rem;
-  background: var(--secondary-color);
+  height: 10rem;
+  object-fit: cover;
 }
-
-.nav-tabs {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: white;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
-  padding: env(safe-area-inset-bottom) 0;
+.card--title {
+  color: #222;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
 }
-
-.tab {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: calc(var(--spacing) * 0.75);
-  color: var(--text-secondary);
-}
-
-.tab.active {
-  color: var(--primary-color);
+.card--link {
+  text-decoration: none;
+  background: #db4938;
+  color: #fff;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
 }
