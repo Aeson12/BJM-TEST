@@ -8,7 +8,7 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
   background: var(--primary-color);
   color: var(--text-primary);
@@ -23,16 +23,16 @@ body {
 .header {
   color: white;
   padding: calc(var(--spacing) * 1.5) var(--spacing);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .current-prayer {
   font-size: 1.2rem;
-  margin-bottom: var(--spacing);
 }
 
 .jamat-time {
-  display: flex;
-  justify-content: space-between;
   font-size: 1.1rem;
 }
 
@@ -47,17 +47,6 @@ body {
   color: var(--primary-color);
   text-align: center;
   font-size: 1.3rem;
-  margin: 0 0 calc(var(--spacing) * 1.5);
-}
-
-.prayer-day {
-  margin-bottom: calc(var(--spacing) * 2);
-}
-
-.prayer-day h3 {
-  font-size: 1.2rem;
-  color: var(--text-primary);
-  margin-bottom: var(--spacing);
 }
 
 .prayer-time {
@@ -67,13 +56,8 @@ body {
   border-bottom: 1px solid #eee;
 }
 
-.prayer-time span:first-child {
-  color: var(--text-secondary);
-}
-
 .search-box {
   margin-top: calc(var(--spacing) * 1.5);
-  position: relative;
 }
 
 .search-box input {
@@ -83,7 +67,6 @@ body {
   border-radius: 8px;
   font-size: 1rem;
   background: var(--secondary-color);
-  box-sizing: border-box;
 }
 
 .nav-tabs {
@@ -93,8 +76,9 @@ body {
   right: 0;
   background: white;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  padding: env(safe-area-inset-bottom) 0;
 }
 
 .tab {
@@ -102,18 +86,9 @@ body {
   flex-direction: column;
   align-items: center;
   padding: calc(var(--spacing) * 0.75);
-  border: none;
-  background: none;
   color: var(--text-secondary);
-  font-size: 0.9rem;
-  gap: 4px;
 }
 
 .tab.active {
   color: var(--primary-color);
-}
-
-.tab-icon {
-  width: 24px;
-  height: 24px;
 }
