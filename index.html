@@ -8,24 +8,81 @@
 </head>
 <body>
   <div class="container">
-    <header class="header">
-      <div class="current-prayer">Current Prayer: Asr</div>
-      <div class="jamat-time">Jamat: 3:00 PM</div>
-    </header>
+    <!-- Status Bar Area -->
+    <div class="status-bar">
+      <span class="time">15:58</span>
+      <div class="status-icons">
+        <span class="signal">••• </span>
+        <span class="wifi">􀙇 </span>
+        <span class="battery">􀋦</span>
+      </div>
+    </div>
+
+    <!-- Menu Icon -->
+    <div class="menu-icon">≡</div>
+
+    <!-- Current Prayer Section -->
+    <div class="current-prayer-section">
+      <div class="prayer-label">Current Prayer</div>
+      <div class="prayer-name">Asr</div>
+      <div class="jamat-row">
+        <span>Jamat</span>
+        <span>15:00</span>
+      </div>
+    </div>
+
+    <!-- Prayer Times Section -->
+    <h1 class="prayer-times-title">PRAYER TIMES TODAY</h1>
+
     <div class="prayer-card">
-      <h2>Prayer Times Today</h2>
-      <div class="prayer-time"><span>Fajr Start</span><span>6:36 AM</span></div>
-      <div class="prayer-time"><span>Zuhr Start</span><span>12:14 PM</span></div>
-      <div class="prayer-time"><span>Asar Start</span><span>2:27 PM</span></div>
-      <div class="prayer-time"><span>Maghrib</span><span>4:14 PM</span></div>
-      <div class="prayer-time"><span>Esha Start</span><span>5:35 PM</span></div>
+      <h2 class="date-heading">Thursday, 2 January 2025</h2>
+      
+      <div class="prayer-times-list">
+        <div class="prayer-time-row">
+          <span>Fajr Start</span>
+          <span>6:36</span>
+        </div>
+        <div class="prayer-time-row">
+          <span>Zuhr Start</span>
+          <span>12:14</span>
+        </div>
+        <div class="prayer-time-row">
+          <span>Asar Start</span>
+          <span>14:27</span>
+        </div>
+        <div class="prayer-time-row">
+          <span>Maghrib</span>
+          <span>16:14</span>
+        </div>
+        <div class="prayer-time-row">
+          <span>Esha Start</span>
+          <span>17:35</span>
+        </div>
+      </div>
     </div>
-    <div class="search-box">
+
+    <!-- Search Bar -->
+    <div class="search-container">
       <input type="text" placeholder="Search">
+      <button class="filter-btn">≡</button>
     </div>
-    <nav class="nav-tabs">
-      <button class="tab active">Prayers</button>
-      <button class="tab">Info</button>
+
+    <h2 class="date-heading next-day">Friday, 3 January 2025</h2>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <div class="nav-item active">
+        <span class="nav-icon">⏰</span>
+        <span>Prayers</span>
+      </div>
+      <div class="nav-item">
+        <span class="nav-icon">⏱</span>
+        <span>2025 test</span>
+      </div>
+      <div class="nav-item">
+        <span class="nav-icon">📍</span>
+        <span>Info</span>
+      </div>
     </nav>
   </div>
 </body>
