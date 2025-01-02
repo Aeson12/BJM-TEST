@@ -1,94 +1,38 @@
-:root {
-  --primary-color: #0A7B42;
-  --secondary-color: #f8f9fa;
-  --text-primary: #2d3436;
-  --text-secondary: #636e72;
-  --spacing: 16px;
-}
-
-body {
-  margin: 0;
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
-  background: var(--primary-color);
-  color: var(--text-primary);
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: var(--spacing);
-}
-
-.header {
-  color: white;
-  padding: calc(var(--spacing) * 1.5) var(--spacing);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.current-prayer {
-  font-size: 1.2rem;
-}
-
-.jamat-time {
-  font-size: 1.1rem;
-}
-
-.prayer-card {
-  background: white;
-  border-radius: 12px;
-  padding: calc(var(--spacing) * 1.5);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.prayer-card h2 {
-  color: var(--primary-color);
-  text-align: center;
-  font-size: 1.3rem;
-}
-
-.prayer-time {
-  display: flex;
-  justify-content: space-between;
-  padding: calc(var(--spacing) * 0.75) 0;
-  border-bottom: 1px solid #eee;
-}
-
-.search-box {
-  margin-top: calc(var(--spacing) * 1.5);
-}
-
-.search-box input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #dfe6e9;
-  border-radius: 8px;
-  font-size: 1rem;
-  background: var(--secondary-color);
-}
-
 .nav-tabs {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   background: white;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
-  padding: env(safe-area-inset-bottom) 0;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  border-radius: 12px 12px 0 0;
 }
 
 .tab {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: calc(var(--spacing) * 0.75);
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 1rem;
   color: var(--text-secondary);
+  background: var(--secondary-color);
+  border-radius: 8px;
+  margin: 0 8px;
 }
 
 .tab.active {
-  color: var(--primary-color);
+  color: white;
+  background: var(--primary-color);
+  font-weight: bold;
+}
+
+.notifications {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.notifications input[type="checkbox"] {
+  margin-right: 10px;
 }
