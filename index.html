@@ -2,29 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"> <!-- Add viewport-fit=cover to handle status bar space -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> <!-- Black translucent for header area -->
-
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="stylesheet" href="styles.css">
   <title>Prayer Times</title>
 </head>
 <body>
   <div class="app-container">
-    <!-- Header: Current Prayer -->
-    <header class="header">
-      <div class="current-prayer-card">
-        <h1>Asr</h1>
-        <p>Jamat: 3:00 PM</p>
+    <!-- Fixed Green Header -->
+    <header class="fixed-header">
+      <div class="header-content">
+        <img src="BJM-TEST/Icons/Icon_Menu.svg" alt="Menu Icon" class="app-icon">
+        <div class="current-prayer-card">
+          <h1>Asr</h1>
+          <p>Jamat: 3:00 PM</p>
+        </div>
       </div>
     </header>
 
     <!-- Main Content -->
     <main class="main-content">
-      <!-- Today's Prayer Times -->
-      <div class="prayer-times-card">
-        <h2>Today's Prayer Times</h2>
+      <!-- Prayer Times Today (Current Day) -->
+      <h2 class="prayer-times-title">Prayer Times Today</h2>
+      <div class="prayer-times-card" id="today-card">
+        <h3>Friday, 3 January 2025</h3>
         <div class="prayer-time"><span>Fajr</span><span>6:36 AM</span></div>
         <div class="prayer-time"><span>Zuhr</span><span>12:14 PM</span></div>
         <div class="prayer-time"><span>Asr</span><span>2:27 PM</span></div>
@@ -32,29 +35,18 @@
         <div class="prayer-time"><span>Isha</span><span>5:35 PM</span></div>
       </div>
 
-      <!-- Search and Filter Section -->
-      <div class="filter-section">
-        <input type="text" placeholder="Search by date..." class="search-box">
-        <select class="month-filter">
-          <option value="January">January</option>
-          <option value="February">February</option>
-          <option value="March">March</option>
-          <option value="April">April</option>
-          <!-- Add more months as needed -->
-        </select>
-      </div>
-
       <!-- Divider -->
       <div class="divider"></div>
 
-      <!-- Tomorrow's Prayer Times -->
-      <div class="prayer-times-card">
-        <h2>Tomorrow's Prayer Times</h2>
-        <div class="prayer-time"><span>Fajr</span><span>6:37 AM</span></div>
-        <div class="prayer-time"><span>Zuhr</span><span>12:15 PM</span></div>
-        <div class="prayer-time"><span>Asr</span><span>2:28 PM</span></div>
-        <div class="prayer-time"><span>Maghrib</span><span>4:15 PM</span></div>
-        <div class="prayer-time"><span>Isha</span><span>5:36 PM</span></div>
+      <!-- Search and Filter Section -->
+      <div class="filter-section">
+        <input type="text" placeholder="Search by date..." class="search-box">
+        <img src="BJM-TEST/Icons/Icon_Filter.svg" alt="Filter Icon" class="filter-icon">
+      </div>
+
+      <!-- Additional Prayer Times (Future Dates) -->
+      <div class="prayer-times-cards" id="future-cards">
+        <!-- Cards for future dates will go here -->
       </div>
     </main>
 
@@ -64,5 +56,46 @@
       <button class="nav-item">Info</button>
     </footer>
   </div>
+
+  <script>
+    // Get today's date and format it
+    const today = new Date();
+    const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    const dayOfWeek = dayNames[today.getDay()];
+    const date = today.getDate();
+    const month = monthNames[today.getMonth()];
+    const year = today.getFullYear();
+
+    // Set the "Prayer Times Today" card with today's full date
+    const todayCard = document.getElementById("today-card");
+    todayCard.querySelector("h3").innerHTML = `${dayOfWeek}, ${date} ${month} ${year}`;
+
+    // Add future dates (e.g., 5th, 6th, 7th, etc.)
+    const futureDates = [1, 2, 3, 4, 5];  // Change this array to add more future days
+    const futureCards = document.getElementById("future-cards");
+
+    futureDates.forEach(day => {
+      const futureDate = new Date();
+      futureDate.setDate(futureDate.getDate() + day);
+      const futureDayOfWeek = dayNames[futureDate.getDay()];
+      const futureMonth = monthNames[futureDate.getMonth()];
+      const futureYear = futureDate.getFullYear();
+      const futureDay = futureDate.getDate();
+
+      const futureCard = document.createElement("div");
+      futureCard.classList.add("prayer-times-card");
+      futureCard.innerHTML = `
+        <h3>${futureDayOfWeek}, ${futureDay} ${futureMonth} ${futureYear}</h3>
+        <div class="prayer-time"><span>Fajr</span><span>6:40 AM</span></div>
+        <div class="prayer-time"><span>Zuhr</span><span>12:20 PM</span></div>
+        <div class="prayer-time"><span>Asr</span><span>2:35 PM</span></div>
+        <div class="prayer-time"><span>Maghrib</span><span>4:25 PM</span></div>
+        <div class="prayer-time"><span>Isha</span><span>5:45 PM</span></div>
+      `;
+      futureCards.appendChild(futureCard);
+    });
+  </script>
 </body>
 </html>
