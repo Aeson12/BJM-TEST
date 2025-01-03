@@ -57,6 +57,7 @@ body {
   align-items: center;
   box-sizing: border-box;
   width: 100%;
+  height: 64px; /* Ensure fixed header has a consistent height */
 }
 
 /* Green Header with Asr (placed below the fixed header) */
@@ -67,9 +68,10 @@ body {
   width: 100%;
   box-sizing: border-box;
   text-align: center;
-  margin-top: 50px; /* Ensure the Asr header is placed correctly below the fixed header */
   position: relative;
-  z-index: 10; /* Ensures this stays above other content */
+  z-index: 10;
+  margin-top: 0; /* Remove any extra margin */
+  top: 64px; /* Push it down by the height of the fixed header */
 }
 
 /* Remove any margin from the "Asr" header */
@@ -88,7 +90,7 @@ body {
   padding: 16px;
   overflow-y: auto;
   flex-grow: 1;
-  margin-top: 16px; /* Add space below the green header */
+  margin-top: 0; /* Ensure no additional margin at the top of content */
 }
 
 /* Prayer Times Title */
