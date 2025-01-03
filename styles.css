@@ -1,23 +1,10 @@
-/* Define Colors */
-:root {
-  --primary-color: #2D814E;
-  --secondary-color: #6c63ff; /* This is the purple you wanted to replace, but you may want to use it elsewhere */
-  --background-color: #f4f4f9;
-  --card-background: #ffffff;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  --border-color: #eaeaea;
-  --hover-background: #eaeaea;
-  --text-color: #333;
-  --active-nav-color: #fff;
-}
-
 /* General Styles */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: #f4f4f9;
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: flex-start; /* Align items to the top */
@@ -27,8 +14,8 @@ body {
 .app-container {
   width: 100%;
   max-width: 450px;
-  background-color: var(--card-background);
-  box-shadow: 0 4px 10px var(--shadow-color);
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -41,24 +28,14 @@ body {
 
 /* Header */
 .header {
-  background-color: var(--primary-color);
-  color: var(--active-nav-color);
-  padding: 16px 0; /* Only vertical padding */
+  background-color: #2D814E; /* Primary color */
+  color: #fff; /* White text color */
+  padding: 16px 0;
+  padding-top: calc(16px + env(safe-area-inset-top)); /* Adjust top padding for safe area */
   text-align: center;
-  width: 100%; /* Ensure it spans the full width */
-  margin: 0; /* Remove margin so it sticks to the top */
-}
-
-
-
-.current-prayer-card h1 {
-  font-size: 2.5rem;
+  width: 100%;
   margin: 0;
-}
-
-.current-prayer-card p {
-  font-size: 1rem;
-  margin: 8px 0 0;
+  position: relative;
 }
 
 /* Main Content */
@@ -69,17 +46,17 @@ body {
 }
 
 .prayer-times-card {
-  background-color: var(--card-background);
+  background-color: #f9f9f9;
   padding: 16px;
   border-radius: 8px;
   margin-bottom: 16px;
-  box-shadow: 0 2px 4px var(--shadow-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .prayer-times-card h2 {
   font-size: 1.5rem;
   margin-bottom: 16px;
-  color: var(--primary-color);
+  color: #6c63ff;
   text-align: center;
 }
 
@@ -87,7 +64,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 8px 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid #eaeaea;
   font-size: 1rem;
 }
 
@@ -97,7 +74,7 @@ body {
 
 .divider {
   height: 2px;
-  background-color: var(--border-color);
+  background-color: #eaeaea;
   margin: 16px 0;
 }
 
@@ -113,7 +90,7 @@ body {
 .search-box {
   flex: 2;
   padding: 12px;
-  border: 1px solid var(--border-color);
+  border: 1px solid #eaeaea;
   border-radius: 8px;
   font-size: 1rem;
 }
@@ -121,19 +98,19 @@ body {
 .month-filter {
   flex: 1;
   padding: 12px;
-  border: 1px solid var(--border-color);
+  border: 1px solid #eaeaea;
   border-radius: 8px;
   font-size: 1rem;
-  background-color: var(--card-background);
+  background-color: #ffffff;
 }
 
 /* Footer */
 .footer {
   display: flex;
   justify-content: space-between;
-  background-color: var(--card-background);
+  background-color: #ffffff;
   padding: 12px;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid #eaeaea;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -145,24 +122,24 @@ body {
 
 .nav-item {
   flex: 1;
-  background: var(--background-color);
+  background: #f4f4f9;
   border: none;
   padding: 12px;
   font-size: 1rem;
   font-weight: bold;
-  color: var(--primary-color);
+  color: #6c63ff;
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
 }
 
 .nav-item.active {
-  background-color: var(--primary-color);
-  color: var(--active-nav-color);
+  background-color: #6c63ff;
+  color: #fff;
 }
 
 .nav-item:not(.active):hover {
-  background-color: var(--hover-background);
+  background-color: #eaeaea;
 }
 
 /* Responsive Design */
