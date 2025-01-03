@@ -1,9 +1,9 @@
 const CACHE_NAME = "pwa-cache-v1";
 const urlsToCache = [
-  "/BJM-TEST/index.html",       // Adjust for GitHub Pages
-  "/BJM-TEST/styles.css",
-  "/BJM-TEST/script.js",
-  "/BJM-TEST/manifest.json",
+  "https://Aeson12.github.io/BJM-TEST/index.html",       // Adjust for GitHub Pages
+  "https://Aeson12.github.io/BJM-TEST/styles.css",
+  "https://Aeson12.github.io/BJM-TEST/script.js",
+  "https://Aeson12.github.io/BJM-TEST/manifest.json",
 ];
 
 
