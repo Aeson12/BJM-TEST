@@ -1,116 +1,170 @@
-/* General */
+/* General Styles */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f8f9fa;
+  background-color: #f4f4f9;
   color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.container {
-  max-width: 420px;
-  margin: auto;
-  padding: 20px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.app-container {
+  width: 100%;
+  max-width: 450px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 /* Header */
 .header {
+  background-color: #2D814E;
+  color: #fff;
+  padding: 16px;
   text-align: center;
-  margin-bottom: 20px;
 }
 
-.current-prayer {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #1c7ed6;
+.current-prayer-card h1 {
+  font-size: 2.5rem;
+  margin: 0;
 }
 
-.jamat-time {
+.current-prayer-card p {
   font-size: 1rem;
-  color: #868e96;
+  margin: 8px 0 0;
 }
 
-/* Prayer Times */
-.prayer-card {
-  background: #f1f3f5;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+/* Main Content */
+.main-content {
+  padding: 16px;
+  overflow-y: auto;
+  flex-grow: 1;
 }
 
-.prayer-card h2 {
-  font-size: 1.3rem;
-  color: #495057;
-  margin-bottom: 10px;
+.prayer-times-card {
+  background-color: #f9f9f9;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.prayer-times-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: #6c63ff;
+  text-align: center;
 }
 
 .prayer-time {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #e9ecef;
+  padding: 8px 0;
+  border-bottom: 1px solid #eaeaea;
+  font-size: 1rem;
 }
 
 .prayer-time:last-child {
   border-bottom: none;
 }
 
-.prayer-time span {
-  font-size: 1rem;
+.divider {
+  height: 2px;
+  background-color: #eaeaea;
+  margin: 16px 0;
 }
 
-/* Search Box */
-.search-box input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  margin-bottom: 15px;
-}
-
-/* Notifications */
-.notifications-card {
+/* Filter Section */
+.filter-section {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  background: #f1f3f5;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
-.notifications-card input {
-  margin-right: 10px;
-}
-
-/* Navigation */
-.nav-tabs {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 10px 0;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.nav-tabs .tab {
-  flex: 1;
-  text-align: center;
-  padding: 10px;
+.search-box {
+  flex: 2;
+  padding: 12px;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
   font-size: 1rem;
-  color: #495057;
-  background: none;
+}
+
+.month-filter {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffffff;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 12px;
+  border-top: 1px solid #eaeaea;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 450px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.nav-item {
+  flex: 1;
+  background: #f4f4f9;
   border: none;
-  outline: none;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #6c63ff;
+  border-radius: 8px;
+  text-align: center;
   cursor: pointer;
 }
 
-.nav-tabs .tab.active {
-  font-weight: bold;
-  color: #1c7ed6;
-  border-bottom: 2px solid #1c7ed6;
+.nav-item.active {
+  background-color: #6c63ff;
+  color: #fff;
+}
+
+.nav-item:not(.active):hover {
+  background-color: #eaeaea;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .current-prayer-card h1 {
+    font-size: 2rem;
+  }
+
+  .prayer-times-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .prayer-time {
+    font-size: 0.9rem;
+  }
+
+  .search-box,
+  .month-filter {
+    font-size: 0.9rem;
+  }
+
+  .nav-item {
+    font-size: 0.9rem;
+  }
 }
