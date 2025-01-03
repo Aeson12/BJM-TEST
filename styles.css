@@ -1,7 +1,7 @@
 /* Define Colors */
 :root {
   --primary-color: #2D814E;
-  --secondary-color: #6c63ff; /* This is the purple you wanted to replace, but you may want to use it elsewhere */
+  --secondary-color: #6c63ff;
   --background-color: #f4f4f9;
   --card-background: #ffffff;
   --shadow-color: rgba(0, 0, 0, 0.1);
@@ -22,6 +22,7 @@ body {
   justify-content: center;
   align-items: flex-start; /* Align items to the top */
   min-height: 100vh;
+  user-select: none; /* Disable text selection across the entire body */
 }
 
 .app-container {
