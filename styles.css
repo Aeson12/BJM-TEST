@@ -30,6 +30,7 @@ body {
   user-select: none; /* This will ensure no text is selectable across the page */
 }
 
+/* App Container */
 .app-container {
   width: 100%;
   max-width: 450px;
@@ -40,23 +41,48 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-top: 0; /* Remove any top padding */
-  border-top-left-radius: 0; /* Remove top left corner rounding */
-  border-top-right-radius: 0; /* Remove top right corner rounding */
+  padding-top: 0; /* No padding for the app container */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
-/* Header */
-.header {
+/* Fixed Green Header */
+.fixed-header {
   background-color: var(--primary-color);
   color: var(--active-nav-color);
-  padding: 16px 0; /* Only vertical padding */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20; /* Ensure the header stays on top of content */
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+.app-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+.current-prayer-card {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  width: 100%; /* Ensure it spans the full width */
-  margin: 0; /* Remove margin so it sticks to the top */
 }
 
 .current-prayer-card h1 {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Smaller font size */
   margin: 0;
 }
 
@@ -70,8 +96,18 @@ body {
   padding: 16px;
   overflow-y: auto;
   flex-grow: 1;
+  margin-top: 120px; /* Add margin to push content down below fixed header */
 }
 
+/* Prayer Times Title */
+.prayer-times-title {
+  font-size: 1.5rem; /* Smaller title font size */
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Prayer Times Cards */
 .prayer-times-card {
   background-color: var(--card-background);
   padding: 16px;
@@ -80,27 +116,33 @@ body {
   box-shadow: 0 2px 4px var(--shadow-color);
 }
 
-.prayer-times-card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 16px;
-  color: var(--primary-color);
+.prayer-times-card h3 {
+  font-size: 1.2rem; /* Smaller card date font size */
   text-align: center;
+  margin-bottom: 16px;
 }
 
 .prayer-time {
   display: flex;
   justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border-color);
   font-size: 1rem;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--border-color); /* Line between rows */
+  padding-bottom: 8px;
 }
 
 .prayer-time:last-child {
-  border-bottom: none;
+  border-bottom: none; /* Remove border from last row */
 }
 
+.prayer-time span {
+  flex: 1;
+  text-align: left;
+}
+
+/* Divider */
 .divider {
-  height: 2px;
+  height: 1px;
   background-color: var(--border-color);
   margin: 16px 0;
 }
@@ -108,27 +150,23 @@ body {
 /* Filter Section */
 .filter-section {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 10px;
+  padding: 10px 16px;
 }
 
 .search-box {
-  flex: 2;
-  padding: 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  width: 100%;
+  padding: 8px;
   font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
 }
 
-.month-filter {
-  flex: 1;
-  padding: 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: var(--card-background);
+.filter-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
 
 /* Footer */
@@ -175,8 +213,8 @@ body {
     font-size: 2rem;
   }
 
-  .prayer-times-card h2 {
-    font-size: 1.2rem;
+  .prayer-times-card h3 {
+    font-size: 1.1rem; /* Smaller card date font size */
   }
 
   .prayer-time {
