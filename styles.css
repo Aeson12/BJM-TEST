@@ -1,38 +1,116 @@
-.nav-tabs {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: white;
-  display: flex;
-  justify-content: space-around;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-  padding: 12px;
-  border-radius: 12px 12px 0 0;
+/* General */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  color: #333;
 }
 
-.tab {
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.current-prayer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1c7ed6;
+}
+
+.jamat-time {
+  font-size: 1rem;
+  color: #868e96;
+}
+
+/* Prayer Times */
+.prayer-card {
+  background: #f1f3f5;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.prayer-card h2 {
+  font-size: 1.3rem;
+  color: #495057;
+  margin-bottom: 10px;
+}
+
+.prayer-time {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.prayer-time:last-child {
+  border-bottom: none;
+}
+
+.prayer-time span {
+  font-size: 1rem;
+}
+
+/* Search Box */
+.search-box input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Notifications */
+.notifications-card {
+  display: flex;
+  align-items: center;
+  background: #f1f3f5;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.notifications-card input {
+  margin-right: 10px;
+}
+
+/* Navigation */
+.nav-tabs {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 0;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-tabs .tab {
   flex: 1;
   text-align: center;
-  padding: 12px 0;
+  padding: 10px;
   font-size: 1rem;
-  color: var(--text-secondary);
-  background: var(--secondary-color);
-  border-radius: 8px;
-  margin: 0 8px;
+  color: #495057;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
-.tab.active {
-  color: white;
-  background: var(--primary-color);
+.nav-tabs .tab.active {
   font-weight: bold;
-}
-
-.notifications {
-  margin: 20px 0;
-  text-align: center;
-}
-
-.notifications input[type="checkbox"] {
-  margin-right: 10px;
+  color: #1c7ed6;
+  border-bottom: 2px solid #1c7ed6;
 }
