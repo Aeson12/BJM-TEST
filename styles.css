@@ -25,6 +25,11 @@ body {
   user-select: none; /* Disable text selection across the entire body */
 }
 
+/* Disable text selection globally */
+* {
+  user-select: none; /* This will ensure no text is selectable across the page */
+}
+
 .app-container {
   width: 100%;
   max-width: 450px;
