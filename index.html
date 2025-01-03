@@ -1,34 +1,64 @@
-<div class="container">
-  <!-- Header -->
-  <header class="header">
-    <div class="current-prayer">Current Prayer: Asr</div>
-    <div class="jamat-time">Jamat: 3:00 PM</div>
-  </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Prayer Times</title>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header: Current Prayer -->
+    <header class="header">
+      <div class="current-prayer-card">
+        <h1>Asr</h1>
+        <p>Jamat: 3:00 PM</p>
+      </div>
+    </header>
 
-  <!-- Prayer Times -->
-  <div class="prayer-card">
-    <h2>Prayer Times Today</h2>
-    <div class="prayer-time"><span>Fajr</span><span>6:36 AM</span></div>
-    <div class="prayer-time"><span>Zuhr</span><span>12:14 PM</span></div>
-    <div class="prayer-time"><span>Asar</span><span>2:27 PM</span></div>
-    <div class="prayer-time"><span>Maghrib</span><span>4:14 PM</span></div>
-    <div class="prayer-time"><span>Isha</span><span>5:35 PM</span></div>
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Today's Prayer Times -->
+      <div class="prayer-times-card">
+        <h2>Today's Prayer Times</h2>
+        <div class="prayer-time"><span>Fajr</span><span>6:36 AM</span></div>
+        <div class="prayer-time"><span>Zuhr</span><span>12:14 PM</span></div>
+        <div class="prayer-time"><span>Asr</span><span>2:27 PM</span></div>
+        <div class="prayer-time"><span>Maghrib</span><span>4:14 PM</span></div>
+        <div class="prayer-time"><span>Isha</span><span>5:35 PM</span></div>
+      </div>
+
+      <!-- Search and Filter Section -->
+      <div class="filter-section">
+        <input type="text" placeholder="Search by date..." class="search-box">
+        <select class="month-filter">
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <!-- Add more months as needed -->
+        </select>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Tomorrow's Prayer Times -->
+      <div class="prayer-times-card">
+        <h2>Tomorrow's Prayer Times</h2>
+        <div class="prayer-time"><span>Fajr</span><span>6:37 AM</span></div>
+        <div class="prayer-time"><span>Zuhr</span><span>12:15 PM</span></div>
+        <div class="prayer-time"><span>Asr</span><span>2:28 PM</span></div>
+        <div class="prayer-time"><span>Maghrib</span><span>4:15 PM</span></div>
+        <div class="prayer-time"><span>Isha</span><span>5:36 PM</span></div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <button class="nav-item active">Prayers</button>
+      <button class="nav-item">Info</button>
+    </footer>
   </div>
-
-  <!-- Search -->
-  <div class="search-box">
-    <input type="text" placeholder="Search">
-  </div>
-
-  <!-- Notifications -->
-  <div class="notifications-card">
-    <input type="checkbox" id="notifications" />
-    <label for="notifications">Enable Notifications</label>
-  </div>
-
-  <!-- Navigation -->
-  <nav class="nav-tabs">
-    <button class="tab active">Prayers</button>
-    <button class="tab">Info</button>
-  </nav>
-</div>
+</body>
+</html>
